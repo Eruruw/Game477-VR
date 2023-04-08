@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 820688128322764289}
+  m_LocomotionProvider: {fileID: 2025418291893466550}
   m_MinHeight: 0
   m_MaxHeight: Infinity
 --- !u!114 &820688128322764290
@@ -403,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
-  m_DelayTime: 1
+  m_System: {fileID: 820688128322764290}
+  m_DelayTime: 0
 --- !u!114 &6654351255630818516
 MonoBehaviour:
   m_ObjectHideFlags: 0

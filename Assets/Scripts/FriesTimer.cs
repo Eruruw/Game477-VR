@@ -6,35 +6,78 @@ public class FriesTimer : MonoBehaviour
 {
     public GameObject[] fries;
     public int friesCount;
-    public bool canFries;
     public GameObject scoopFries;
+    public float timer;
+    public float cookTime;
+    public bool cooking;
 
     // Start is called before the first frame update
     void Start()
     {
-        fries[0].SetActive(true);
         fries[1].SetActive(true);
         fries[2].SetActive(true);
+        fries[0].SetActive(true);
         friesCount = 0;
-        canFries = true;
+        timer = 0;
+    }
+
+    private void Update()
+    {
+        if (cooking)
+        {
+            timer += Time.deltaTime;
+            if (timer > cookTime)
+            {
+                gameObject.tag = "cookedFries";
+                //insert code to change fries to cooked here
+            }
+            if (timer > 45)
+            {
+                gameObject.tag = "overcookedFries";
+                //insert code to change fries to overcooked here
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.CompareTag("emptyScoop") && canFries)
+        if (c.CompareTag("emptyScoop") && gameObject.CompareTag("cookedFries") && !cooking)
         {
             scoopFries.SetActive(true);
             c.gameObject.tag = "fullScoop";
             fries[friesCount].SetActive(false);
             friesCount++;
-            if (friesCount >= fries.Length)
+            if (friesCount >= fries.Length - 1)
             {
-                canFries = false;
+                gameObject.tag = "emptyBasket";
             }
         }
-        if (c.CompareTag("fryBag"))
+
+        if (c.CompareTag("fryBag") && gameObject.CompareTag("emptyBasket") && !cooking)
         {
             Start();
+        }
+
+        if (c.CompareTag("fryer"))
+        {
+            cooking = true;
+        }
+
+        if (c.CompareTag("trash"))
+        {
+            fries[1].SetActive(false);
+            fries[2].SetActive(false);
+            fries[0].SetActive(false);
+            friesCount = 3;
+            gameObject.tag = "emptyBasket";
+        }
+    }
+
+    private void OnTriggerExit(Collider c)
+    {
+        if (c.CompareTag("fryer"))
+        {
+            cooking = false;
         }
     }
 }

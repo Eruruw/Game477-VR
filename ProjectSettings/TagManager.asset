@@ -9,6 +9,12 @@ TagManager:
   - emptyScoop
   - fullScoop
   - fryBag
+  - uncookedFries
+  - cookedFries
+  - emptyBasket
+  - overcookedFries
+  - fryer
+  - trash
   layers:
   - Default
   - TransparentFX
