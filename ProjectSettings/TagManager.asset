@@ -15,6 +15,15 @@ TagManager:
   - overcookedFries
   - fryer
   - trash
+  - topBun
+  - bottomBun
+  - burgerBottom
+  - cheese
+  - patty
+  - milkshake
+  - fries
+  - check
+  - used
   layers:
   - Default
   - TransparentFX
