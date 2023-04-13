@@ -26,6 +26,8 @@ TagManager:
   - used
   - uncookedPatty
   - cookedPatty
+  - griddle
+  - overcookedPatty
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class FriesTimer : MonoBehaviour
     public int friesCount;
     public GameObject scoopFries;
     public float timer;
-    public float cookTime;
+    public float cookTime = 30f;
     public bool cooking;
 
     // Start is called before the first frame update
@@ -29,12 +29,12 @@ public class FriesTimer : MonoBehaviour
             if (timer > cookTime)
             {
                 gameObject.tag = "cookedFries";
-                //insert code to change fries to cooked here
+                //insert code to change fries model to cooked here
             }
             if (timer > 45)
             {
                 gameObject.tag = "overcookedFries";
-                //insert code to change fries to overcooked here
+                //insert code to change fries model to overcooked here
             }
         }
     }
