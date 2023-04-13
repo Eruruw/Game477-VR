@@ -11,13 +11,13 @@ public class IngredientController : MonoBehaviour
 
     void Start()
     {
-        if(gameObject.CompareTag("bottomBun"))
+        if (gameObject.CompareTag("bottomBun"))
         {
             foodVal = 100000;
         }
-        else if (gameObject.CompareTag("patty"))
+        else if (gameObject.CompareTag("uncookedPatty"))
         {
-            foodVal = 10000;
+            foodVal = 0;
         }
         else if (gameObject.CompareTag("cheese"))
         {
@@ -39,19 +39,19 @@ public class IngredientController : MonoBehaviour
 
     private async void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.CompareTag("check"))
+        if (col.gameObject.CompareTag("check"))
         {
             OrderController check = col.GetComponent<OrderController>();
             check.checkOrder = check.checkOrder + foodVal;
             await Task.Delay(100);
-            if (gameObject.CompareTag("patty") || gameObject.CompareTag("cheese") || gameObject.CompareTag("topBun"))
+            if (gameObject.CompareTag("cookedPatty") || gameObject.CompareTag("cheese") || gameObject.CompareTag("topBun"))
             {
                 FixedJoint joint = gameObject.GetComponent<FixedJoint>();
                 Destroy(joint);
             }
             Destroy(gameObject);
         }
-        if(col.gameObject.CompareTag("trash"))
+        if (col.gameObject.CompareTag("trash"))
         {
             Destroy(gameObject);
         }

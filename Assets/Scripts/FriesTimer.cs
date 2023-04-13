@@ -47,7 +47,7 @@ public class FriesTimer : MonoBehaviour
             c.gameObject.tag = "fullScoop";
             fries[friesCount].SetActive(false);
             friesCount++;
-            if (friesCount >= fries.Length - 1)
+            if (friesCount >= fries.Length)
             {
                 gameObject.tag = "emptyBasket";
             }
