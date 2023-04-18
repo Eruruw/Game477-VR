@@ -97,14 +97,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8344104499636035334}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &8344104499636035339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17982508, y: 0.088810615, z: 0.8974329}
-  m_Center: {x: 0, y: -0.008297116, z: -0.19004756}
+  m_Size: {x: 0.23954296, y: 0.088810615, z: 0.9103167}
+  m_Center: {x: -0.0021071807, y: -0.008297116, z: 0.19016622}
 --- !u!65 &1234066277758929469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,8 +254,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17982508, y: 0.010458864, z: 0.25345117}
-  m_Center: {x: 0, y: -0.037615385, z: -0.51203847}
+  m_Size: {x: 0.21991175, y: 0.0014676899, z: 0.28199506}
+  m_Center: {x: -1.39496975e-14, y: -0.042110972, z: 0.49540567}
 --- !u!65 &2523137654324184470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -267,8 +267,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.073020466, y: 0.017992537, z: 0.6417048}
-  m_Center: {x: 0, y: 0.0010107663, z: -0.06384529}
+  m_Size: {x: 0.073020466, y: 0.026175033, z: 0.61909795}
+  m_Center: {x: -8.0129317e-16, y: -0.0030804817, z: 0.0453465}
 --- !u!1001 &7199155614081656269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.0000003874301
       objectReference: {fileID: 0}
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
@@ -324,7 +324,7 @@ PrefabInstance:
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 6579111579544062869, guid: 2660fcd8afd268b4b87456da220b5df3,
         type: 3}
