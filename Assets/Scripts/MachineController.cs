@@ -48,7 +48,7 @@ public class MachineController : MonoBehaviour
         int rand = UnityEngine.Random.Range(0, 5);
         if (rand == 0)
         {
-            foreach(var col in gameObject.GetComponentsInChildren<Collider>())
+            foreach(var col in lid.GetComponentsInChildren<Collider>())
             {
                 col.enabled = false;
             }
