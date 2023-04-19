@@ -24,7 +24,7 @@ public class MachineController : MonoBehaviour
             if(!unplugged && !bustFuze && !switched)
             {
                 broken = false;
-                foreach (var col in gameObject.GetComponentsInChildren<Collider>())
+                foreach (var col in lid.GetComponentsInChildren<Collider>())
                 {
                     col.enabled = true;
                 }
