@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class tutorialArrow : MonoBehaviour
@@ -7,6 +8,8 @@ public class tutorialArrow : MonoBehaviour
     private Dictionary<int, Vector3> taskPos;
     private Dictionary<int, string> taskText;
     public Transform[] arrowPositions;
+    public int currentStep;
+    public TMP_Text arrowText;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,7 @@ public class tutorialArrow : MonoBehaviour
             {26, arrowPositions[26].position},
             {27, arrowPositions[27].position},
             {28, arrowPositions[28].position},
+            {29, arrowPositions[29].position},
         };
 
         taskText = new Dictionary<int, string>()
@@ -64,29 +68,38 @@ public class tutorialArrow : MonoBehaviour
             {12, "Grab the cheese"},
             {13, "Place the cheese\non the patty"},
             {14, "Grab the top bun"},
-            {15, "Grab the completed\nburger"},
-            {16, "Place the burger\nin the paper bag"},
+            {15, "Place the bun on\ntop of the cheese"},
+            {16, "Grab the completed\nburger"},
+            {17, "Place the burger\nin the paper bag"},
 
 
-            {17, "Open the fridge"},
-            {18, "Grab the bag of\nuncooked fires"},
-            {19, "Refill the basket by\nplacing the bag here"},
+            {18, "Open the fridge"},
+            {19, "Grab the bag of\nuncooked fires"},
+            {20, "Refill the basket by\nplacing the bag here"},
 
-            {20, "Grab the basket"},
-            {21, "Place the basket\nin the fryer"},
-            {22, "Wait for the fries\nto finish cooking"},
-            {23, "Take the fires out of\nthe fryer before they burn"},
-            {24, "Grab the scoop"},
-            {25, "Scoop fries out\nof the basket"},
-            {26, "Grab an empty\nfry container"},
-            {27, "Put the scooped fries into\nthe container"},
-            {28, "Put the container of fries\nin the paper bag"},
+            {21, "Grab the basket"},
+            {22, "Place the basket\nin the fryer"},
+            {23, "Wait for the fries\nto finish cooking"},
+            {24, "Take the fires out of\nthe fryer before they burn"},
+            {25, "Grab the scoop"},
+            {26, "Scoop fries out\nof the basket"},
+            {27, "Grab an empty\nfry container"},
+            {28, "Put the scooped fries into\nthe container"},
+            {29, "Put the container of fries\nin the paper bag"},
         };
+
+        currentStep = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = taskPos[currentStep];
+        arrowText.text = taskText[currentStep];
+    }
+
+    public void incrementStep()
+    {
+        currentStep++;
     }
 }
