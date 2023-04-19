@@ -20,9 +20,10 @@ public class MachineController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(broken)
+        if (broken)
         {
-            if(!unplugged && !bustFuze && !switched)
+            hingeSpring.targetPosition = 160;
+            if (!unplugged && !bustFuze && !switched)
             {
                 broken = false;
                 foreach (var col in lid.GetComponentsInChildren<Collider>())
@@ -30,6 +31,7 @@ public class MachineController : MonoBehaviour
                     col.enabled = true;
                 }
                 hingeSpring.targetPosition = 0;
+                hinge.spring = hingeSpring;
             }
         }
     }
@@ -54,6 +56,7 @@ public class MachineController : MonoBehaviour
                 col.enabled = false;
             }
             hingeSpring.targetPosition = 160;
+            hinge.spring = hingeSpring;
             int rand2 = UnityEngine.Random.Range(0, 3);
             for (int i = 0; i < rand2; i++)
             {
