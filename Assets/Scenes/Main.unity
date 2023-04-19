@@ -7938,6 +7938,7 @@ MonoBehaviour:
   trigger: {fileID: 1472517152}
   switches: {fileID: 926508022}
   plug: {fileID: 886007269}
+  hinge: {fileID: 1932388148}
   broken: 0
   unplugged: 0
   bustFuze: 0

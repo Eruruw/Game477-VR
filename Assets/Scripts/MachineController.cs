@@ -9,12 +9,13 @@ public class MachineController : MonoBehaviour
     public GameObject lid, trigger;
     public SwitchController switches;
     public PlugBehavior plug;
+    public HingeJoint hinge;
     public bool broken, unplugged, bustFuze, switched;
-    private JointSpring hinge;
+    private JointSpring hingeSpring;
 
     void Start()
     {
-        hinge = lid.GetComponent<HingeJoint>().spring;
+        hingeSpring = hinge.spring;
     }
 
     void FixedUpdate()
@@ -28,7 +29,7 @@ public class MachineController : MonoBehaviour
                 {
                     col.enabled = true;
                 }
-                hinge.targetPosition = 0;
+                hingeSpring.targetPosition = 0;
             }
         }
     }
@@ -52,7 +53,7 @@ public class MachineController : MonoBehaviour
             {
                 col.enabled = false;
             }
-            hinge.targetPosition = 160;
+            hingeSpring.targetPosition = 160;
             int rand2 = UnityEngine.Random.Range(0, 3);
             for (int i = 0; i < rand2; i++)
             {
