@@ -8,34 +8,32 @@ public class OrderController : MonoBehaviour
 {
     public int orderNum;
     public int checkOrder;
-    private int randInt;
     public CloneSocketObject[] objSpawns;
 
     void Start()
     {
         orderNum = 100100;
         checkOrder = 0;
-        System.Random rnd = new System.Random();
-        randInt = rnd.Next(1, 3);
-        for(int i = 0; i < randInt; i++)
+        int rand = UnityEngine.Random.Range(1, 4);
+        for(int i = 0; i < rand; i++)
         {
-            randInt = rnd.Next(2);
-            if(randInt == 0)
+            int rand2 = UnityEngine.Random.Range(0, 2);
+            if(rand2 == 0)
             {
                 orderNum += 10000;
             }
-            else if(randInt == 1)
+            else if(rand2 == 1)
             {
                 orderNum += 1000;
             }
         }
-        randInt = rnd.Next(2);
-        if(randInt == 1)
+        rand = UnityEngine.Random.Range(0, 2);
+        if(rand == 1)
         {
             orderNum += 10;
         }
-        randInt = rnd.Next(2);
-        if(randInt == 1)
+        rand = UnityEngine.Random.Range(0, 2);
+        if (rand == 1)
         {
             orderNum += 1;
         }
