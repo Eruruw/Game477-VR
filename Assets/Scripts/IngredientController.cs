@@ -15,10 +15,6 @@ public class IngredientController : MonoBehaviour
         {
             foodVal = 100000;
         }
-        else if (gameObject.CompareTag("uncookedPatty"))
-        {
-            foodVal = 0;
-        }
         else if (gameObject.CompareTag("cheese"))
         {
             foodVal = 1000;
@@ -26,14 +22,6 @@ public class IngredientController : MonoBehaviour
         else if (gameObject.CompareTag("topBun"))
         {
             foodVal = 100;
-        }
-        else if (gameObject.CompareTag("fries"))
-        {
-            foodVal = 10;
-        }
-        else if (gameObject.CompareTag("milkshake"))
-        {
-            foodVal = 1;
         }
     }
 
@@ -50,6 +38,11 @@ public class IngredientController : MonoBehaviour
                 Destroy(joint);
             }
             Destroy(gameObject);
+        }
+        if(gameObject.CompareTag("milkshakeCup") && col.gameObject.CompareTag("milkTrigger"))
+        {
+            gameObject.tag = "milkshake";
+            foodVal = 1;
         }
         if (col.gameObject.CompareTag("trash"))
         {

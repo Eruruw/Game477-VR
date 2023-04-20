@@ -28,6 +28,10 @@ TagManager:
   - cookedPatty
   - griddle
   - overcookedPatty
+  - machineLid
+  - milkshakeCup
+  - milkMachine
+  - milkTrigger
   layers:
   - Default
   - TransparentFX
