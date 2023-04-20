@@ -82,7 +82,7 @@ public class MachineController : MonoBehaviour
 
     private async void EnableCols()
     {
-        await Task.Delay(3000);
+        await Task.Delay(10000);
         foreach (var col in lid.GetComponentsInChildren<Collider>())
         {
             col.enabled = true;
