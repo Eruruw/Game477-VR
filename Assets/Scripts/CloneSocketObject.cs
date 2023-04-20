@@ -27,11 +27,11 @@ public class CloneSocketObject : MonoBehaviour
     {
         if (numObjs <= 3)
         {
-            WaitThenSpawn(args);
+            StartCoroutine(WaitThenSpawn(args));
         }
         if (numObjs == 4)
         {
-            WaitThenSpawn(args);
+            StartCoroutine(WaitThenSpawn(args));
             col = gameObjectClone.GetComponent<Collider>();
             rb = gameObjectClone.GetComponent<Rigidbody>();
             rb.isKinematic = true;
