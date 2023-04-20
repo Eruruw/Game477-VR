@@ -19,7 +19,7 @@ public class OrderBehavior : MonoBehaviour
         if(col.gameObject.CompareTag("check"))
         {
             orderCon.CheckOrder();
-            gameObject.rigidbody.velocity = new Vector3(0, 0, 0);
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             transform.rotation = origRot;
             transform.position = origPos;
         }

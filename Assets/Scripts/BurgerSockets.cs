@@ -41,7 +41,7 @@ public class BurgerSockets : MonoBehaviour
             socket.interactionLayers = bottomLayer;
         }
         SetPos();
-        tf.Translate(0f, 0.02f, 0f);
+        tf.Translate(0f, 0.02075f, 0f);
     }
 
     private async void SetPos()

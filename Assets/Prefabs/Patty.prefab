@@ -256,7 +256,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27133387, y: 0.05253315, z: 0.26467466}
+  m_Size: {x: 0.27133387, y: 0.045, z: 0.26467466}
   m_Center: {x: 0.00021643937, y: 0.01489128, z: 0.0013607368}
 --- !u!114 &6343858594452975851
 MonoBehaviour:
@@ -273,6 +273,7 @@ MonoBehaviour:
   cooking: 0
   timer: 0
   cookTime: 30
+  tutorial: {fileID: 0}
 --- !u!114 &-5285535845389189748
 MonoBehaviour:
   m_ObjectHideFlags: 0
