@@ -6,10 +6,12 @@ public class OrderBehavior : MonoBehaviour
 {
     public OrderController orderCon;
     private Vector3 origPos;
+    private Quaternion origRot;
 
     void Start()
     {
-        origPos = transform.localPosition;
+        origPos = transform.position;
+        origRot = transform.rotation;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -17,7 +19,9 @@ public class OrderBehavior : MonoBehaviour
         if(col.gameObject.CompareTag("check"))
         {
             orderCon.CheckOrder();
-            transform.localPosition = origPos;
+            gameObject.rigidbody.velocity = new Vector3(0, 0, 0);
+            transform.rotation = origRot;
+            transform.position = origPos;
         }
     }
 }

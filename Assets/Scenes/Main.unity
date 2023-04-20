@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 17783559}
   m_Layer: 0
   m_Name: OrderController
-  m_TagString: Untagged
+  m_TagString: orderCon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4536,7 +4536,7 @@ GameObject:
   - component: {fileID: 1149244338}
   - component: {fileID: 1149244337}
   m_Layer: 0
-  m_Name: Bag
+  m_Name: PaperBag
   m_TagString: orderBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4549,13 +4549,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149244335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.244, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.735, y: 1.236, z: -1.962}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1684945955}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1149244337
 MonoBehaviour:
@@ -6891,38 +6891,6 @@ Transform:
   m_Father: {fileID: 1901463213}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1684945954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1684945955}
-  m_Layer: 0
-  m_Name: Paperbag
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1684945955
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684945954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.735, y: 0.992, z: -1.962}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1149244336}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690410822
 GameObject:
   m_ObjectHideFlags: 0
@@ -7928,7 +7896,7 @@ MonoBehaviour:
   - {fileID: 643710911}
   - {fileID: 1277367928}
   - {fileID: 1277367928}
-  - {fileID: 1684945955}
+  - {fileID: 0}
   - {fileID: 856706746}
   - {fileID: 872238952}
   - {fileID: 910674646}
@@ -7940,7 +7908,7 @@ MonoBehaviour:
   - {fileID: 910674646}
   - {fileID: 455639043}
   - {fileID: 455639043}
-  - {fileID: 1684945955}
+  - {fileID: 0}
   currentStep: 0
   arrowText: {fileID: 516025434}
 --- !u!4 &1961186739
@@ -8709,8 +8677,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 6
-  m_AttachTransform: {fileID: 0}
+    m_Bits: 2
+  m_AttachTransform: {fileID: 407776641}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -8775,6 +8743,10 @@ MonoBehaviour:
   socketTf: {fileID: 2120907021}
   Layer:
     m_Bits: 1
+  ingredientLayer:
+    m_Bits: 4
+  bottomLayer:
+    m_Bits: 2
   BurgerLayer:
     m_Bits: 16
 --- !u!136 &2120907024

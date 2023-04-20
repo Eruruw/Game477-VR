@@ -11,6 +11,8 @@ public class BurgerSockets : MonoBehaviour
     public Transform tf;
     public Transform socketTf;
     public InteractionLayerMask Layer;
+    public InteractionLayerMask ingredientLayer;
+    public InteractionLayerMask bottomLayer;
     public InteractionLayerMask BurgerLayer;
     private GameObject item = null;
 
@@ -29,12 +31,14 @@ public class BurgerSockets : MonoBehaviour
         {
             tf.position = socketTf.position;
             item.tag = "burgerBottom";
+            socket.interactionLayers = ingredientLayer;
         }
         if (item.CompareTag("topBun"))
         {
             GameObject bun = GameObject.FindWithTag("burgerBottom");
             XRGrabInteractable bunGrab = bun.GetComponent<XRGrabInteractable>();
             bunGrab.interactionLayers = BurgerLayer;
+            socket.interactionLayers = bottomLayer;
         }
         SetPos();
         tf.Translate(0f, 0.02f, 0f);

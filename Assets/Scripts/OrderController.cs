@@ -53,13 +53,13 @@ public class OrderController : MonoBehaviour
             Debug.Log("Incorrect");
         }
 
-        DestroyObjs(ReturnLayer(GetAllObjs()));
+//        DestroyObjs(ReturnLayer(GetAllObjs()));
 
-        foreach (CloneSocketObject spawn in objSpawns)
-        {
-            spawn.numObjs = 0;
-            spawn.CloneInteractable();
-        }
+//        foreach (CloneSocketObject spawn in objSpawns)
+//        {
+//            spawn.numObjs = 0;
+//            spawn.CloneInteractable();
+//        }
 
         Start();
     }
@@ -88,9 +88,13 @@ public class OrderController : MonoBehaviour
         {
             if (objs[i] != null)
             {
-                print(i);
-                print(objs[i].gameObject);
-                Destroy(objs[i]);
+                IngredientController IC = objs[i].gameObject.GetComponent<IngredientController>();
+                if(IC != null)
+                {
+                    print(i);
+                    print(objs[i].gameObject);
+                    Destroy(objs[i]);
+                }
             }
         }
     }
