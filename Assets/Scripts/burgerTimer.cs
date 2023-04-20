@@ -37,7 +37,7 @@ public class burgerTimer : MonoBehaviour
 
                 //insert code to change patty model to cooked here
             }
-            if (timer > 45)
+            if (timer > 450)
             {
                 gameObject.tag = "overcookedPatty";
                 IC.foodVal = 0;
@@ -56,7 +56,7 @@ public class burgerTimer : MonoBehaviour
                 tutorial.incrementStep(4);
             }
         }
-        if (collision.gameObject.CompareTag("tray"))
+        if (collision.gameObject.CompareTag("prep"))
         {
             if (tutorial.currentStep == 7)
             {

@@ -10,6 +10,7 @@ public class IngredientController : MonoBehaviour
 {
     public int foodVal = 0;
     [SerializeField] private TrashableObject trash;
+    public tutorialArrow tutorial;
 
     void Start()
     {
@@ -32,6 +33,15 @@ public class IngredientController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("orderBag"))
         {
+            if (tutorial.currentStep == 17)
+            {
+                tutorial.incrementStep(17);
+            }
+            else if (tutorial.currentStep == 29)
+            {
+                tutorial.incrementStep(29);
+            }
+
             OrderController check = GameObject.FindWithTag("orderCon").GetComponent<OrderController>();
             check.checkOrder = check.checkOrder + foodVal;
             await Task.Delay(10);
@@ -48,13 +58,17 @@ public class IngredientController : MonoBehaviour
             gameObject.tag = "milkshake";
             foodVal = 1;
         }
-        //if (col.gameObject.CompareTag("bottomBun") || col.gameObject.CompareTag("cookedPatty")
-        //    || col.gameObject.CompareTag("cheese") || col.gameObject.CompareTag("topBun"))
-        //{
-        //    if (currentStep == 9 || currentStep == 11 || currentStep == 13 || currentStep == 15)
-        //    {
-        //        incrementStep(currentStep);
-        //    }
-        //}
+        
+    }
+
+    public void incrementIfBurgerComplete(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Player"))
+        {
+            if (tutorial.currentStep == 16)
+            {
+                tutorial.incrementStep(16);
+            }
+        }
     }
 }

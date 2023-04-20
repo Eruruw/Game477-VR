@@ -26,12 +26,15 @@ public class friesContainer : MonoBehaviour
             containerFries.SetActive(true);
             canFill = false;
             c.gameObject.tag = "emptyScoop";
+            gameObject.tag = "fries";
 
             if (tutorial.currentStep == 28)
             {
                 tutorial.incrementStep(28);
             }
         }
+
+
     }
 
     public void incrementIfNext(SelectEnterEventArgs args)

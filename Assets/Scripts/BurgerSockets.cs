@@ -15,6 +15,7 @@ public class BurgerSockets : MonoBehaviour
     public InteractionLayerMask bottomLayer;
     public InteractionLayerMask BurgerLayer;
     private GameObject item = null;
+    public tutorialArrow tutorial;
 
     void Start()
     {
@@ -23,7 +24,6 @@ public class BurgerSockets : MonoBehaviour
 
     public void SocketCheck()
     {
-        print("interact with burger socket");
         IXRSelectInteractable selItem = socket.GetOldestInteractableSelected();
         item = selItem.transform.gameObject;
         XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
@@ -33,6 +33,7 @@ public class BurgerSockets : MonoBehaviour
             tf.position = socketTf.position;
             item.tag = "burgerBottom";
             socket.interactionLayers = ingredientLayer;
+            tutorial.incrementIfBurger();
         }
         if (item.CompareTag("topBun"))
         {
@@ -64,6 +65,7 @@ public class BurgerSockets : MonoBehaviour
                 FixedJoint joint = item.GetComponent<FixedJoint>();
                 Rigidbody rb = parent.GetComponent<Rigidbody>();
                 joint.connectedBody = rb;
+                tutorial.incrementIfBurger();
             }
         }
     }

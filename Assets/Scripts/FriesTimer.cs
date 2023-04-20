@@ -43,7 +43,7 @@ public class FriesTimer : MonoBehaviour
 
                 //insert code to change fries model to cooked here
             }
-            if (timer > 45)
+            if (timer > 450)
             {
                 gameObject.tag = "overcookedFries";
                 IC.foodVal = 0;
