@@ -43,6 +43,7 @@ public class OrderController : MonoBehaviour
     public async void CheckOrder()
     {
         await Task.Delay(100);
+        Debug.Log(checkOrder.ToString());
         if(checkOrder == orderNum)
         {
             Debug.Log("Correct");
