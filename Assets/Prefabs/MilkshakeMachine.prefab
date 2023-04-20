@@ -3443,6 +3443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lid: {fileID: 3814246708880035276}
   trigger: {fileID: 3814246709485534942}
+  button: {fileID: 3814246709434099930}
   switches: {fileID: 3814246707872123144}
   plug: {fileID: 3814246707925733147}
   hinge: {fileID: 3814246708880035274}

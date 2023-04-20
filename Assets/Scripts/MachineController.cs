@@ -3,18 +3,21 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class MachineController : MonoBehaviour
 {
-    public GameObject lid, trigger;
+    public GameObject lid, trigger, buttonObj;
     public SwitchController switches;
     public PlugBehavior plug;
     public HingeJoint hinge;
     public bool broken, unplugged, bustFuze, switched;
     private JointSpring hingeSpring;
+    private XRGrabInteractable button;
 
     void Start()
     {
+        button = buttonObj.GetComponent<XRGrabInteractable>();
         hingeSpring = hinge.spring;
     }
 
@@ -47,6 +50,7 @@ public class MachineController : MonoBehaviour
         int rand = UnityEngine.Random.Range(0, 5);
         if (rand == 0)
         {
+            button.enabled = false;
             foreach(var col in lid.GetComponentsInChildren<Collider>())
             {
                 col.enabled = false;
@@ -83,5 +87,6 @@ public class MachineController : MonoBehaviour
         {
             col.enabled = true;
         }
+        button.enabled = true;
     }
 }
