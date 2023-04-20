@@ -1,5 +1,4 @@
-using System;
-using System.Threading.Tasks;
+using SerializableCallback;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,23 +27,15 @@ public class CloneSocketObject : MonoBehaviour
     {
         if (numObjs <= 3)
         {
-            IXRInteractor socket = args.interactorObject;
-            GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
-            GameObject item = socket.transform.gameObject;
-            item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
-            numObjs++;
+            WaitThenSpawn(args);
         }
         if (numObjs == 4)
         {
-            IXRInteractor socket = args.interactorObject;
-            GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
-            GameObject item = socket.transform.gameObject;
-            item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
+            WaitThenSpawn(args);
             col = gameObjectClone.GetComponent<Collider>();
             rb = gameObjectClone.GetComponent<Rigidbody>();
             rb.isKinematic = true;
             col.enabled = false;
-            numObjs++;
             capped = true;
         }
     }
@@ -52,5 +43,16 @@ public class CloneSocketObject : MonoBehaviour
     public void CloneInteractable()
     {
         Instantiate(clonePrefab, gameObject.transform.position, gameObject.transform.rotation);
+    }
+
+    public IEnumerator WaitThenSpawn(SelectExitEventArgs args)
+    {
+        yield return new WaitForSeconds(0.5f);
+        IXRInteractor socket = args.interactorObject;
+        GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
+        GameObject item = socket.transform.gameObject;
+        item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
+        clonePrefab = gameObjectClone;
+        numObjs++;
     }
 }
