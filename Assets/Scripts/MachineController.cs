@@ -51,7 +51,7 @@ public class MachineController : MonoBehaviour
             {
                 col.enabled = false;
             }
-            hingeSpring.targetPosition = 160;
+            hingeSpring.targetPosition = 140;
             hinge.spring = hingeSpring;
             int rand2 = UnityEngine.Random.Range(0, 3);
             for (int i = 0; i < rand2; i++)
