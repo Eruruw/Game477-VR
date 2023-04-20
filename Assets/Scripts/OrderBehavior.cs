@@ -23,6 +23,8 @@ public class OrderBehavior : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             transform.rotation = origRot;
             transform.position = origPos;
+
+            //insert message to state that tutorial is over
         }
 
         if (col.gameObject.CompareTag("burger"))
@@ -38,6 +40,13 @@ public class OrderBehavior : MonoBehaviour
             if (tutorial.currentStep == 29)
             {
                 tutorial.incrementStep(29);
+            }
+        }
+        if (col.gameObject.CompareTag("milkshake"))
+        {
+            if (tutorial.currentStep == 34)
+            {
+                tutorial.incrementStep(34);
             }
         }
     }

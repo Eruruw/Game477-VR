@@ -14,6 +14,8 @@ public class MachineController : MonoBehaviour
     public bool broken, unplugged, bustFuze, switched;
     private JointSpring hingeSpring;
     private XRGrabInteractable button;
+    public tutorialArrow tutorial;
+    public GameObject[] arrows;
 
     void Start()
     {
@@ -31,6 +33,10 @@ public class MachineController : MonoBehaviour
                 hingeSpring.targetPosition = 0;
                 hinge.spring = hingeSpring;
                 EnableCols();
+                foreach (GameObject arrow in arrows)
+                {
+                    arrow.SetActive(false);
+                }
             }
         }
     }
@@ -39,9 +45,18 @@ public class MachineController : MonoBehaviour
     {
         if(!broken)
         {
+            if (tutorial.currentStep == 32)
+            {
+                tutorial.incrementStep(32);
+            }
+
             trigger.SetActive(true);
             await Task.Delay(200);
             trigger.SetActive(false);
+            if (tutorial.currentStep == 33)
+            {
+                tutorial.incrementStep(33);
+            }
         }
     }
 
@@ -65,15 +80,19 @@ public class MachineController : MonoBehaviour
                 {
                     plug.SlipOut();
                     unplugged = true;
+                    arrows[2].SetActive(true);
                 }
                 else if (rand3 == 1)
                 {
                     bustFuze = true;
+                    arrows[0].SetActive(true);
+                    arrows[1].SetActive(true);
                 }
                 else if (rand3 == 2)
                 {
                     switches.RandFlip();
                     switched = true;
+                    arrows[3].SetActive(true);
                 }
             }
             broken = true;
