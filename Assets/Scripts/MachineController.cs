@@ -57,6 +57,7 @@ public class MachineController : MonoBehaviour
             {
                 tutorial.incrementStep(33);
             }
+            Game.globalInstance.sndPlayer.PlaySound(SoundType.ITEM_COMPLETE, GetComponent<AudioSource>());
         }
     }
 

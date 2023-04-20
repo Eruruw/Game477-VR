@@ -50,6 +50,7 @@ public class burgerTimer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("griddle"))
         {
+            Game.globalInstance.sndPlayer.PlaySound(SoundType.BURGER_COOK, GetComponent<AudioSource>());
             cooking = true;
             if (tutorial.currentStep == 4)
             {
@@ -69,6 +70,7 @@ public class burgerTimer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("griddle"))
         {
+            Game.globalInstance.sndPlayer.PlaySound(SoundType.ITEM_COMPLETE, GetComponent<AudioSource>());
             cooking = false;
             if (tutorial.currentStep == 6)
             {

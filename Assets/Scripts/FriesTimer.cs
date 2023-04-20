@@ -90,6 +90,7 @@ public class FriesTimer : MonoBehaviour
         if (c.CompareTag("fryer"))
         {
             cooking = true;
+            Game.globalInstance.sndPlayer.PlaySound(SoundType.FRIES_COOK, GetComponent<AudioSource>());
 
             if (tutorial.currentStep == 22)
             {
@@ -112,6 +113,7 @@ public class FriesTimer : MonoBehaviour
         if (c.CompareTag("fryer"))
         {
             cooking = false;
+            Game.globalInstance.sndPlayer.PlaySound(SoundType.ITEM_COMPLETE, GetComponent<AudioSource>());
 
             if (tutorial.currentStep == 24)
             {
