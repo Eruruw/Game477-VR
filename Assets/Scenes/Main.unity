@@ -5195,8 +5195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clonePrefab
       value: 
-      objectReference: {fileID: 4455736037472686215, guid: 332dfc2f77898c3418bd7a5df42aa0ed,
-        type: 3}
+      objectReference: {fileID: 506688310}
     - target: {fileID: 5923898079209886806, guid: fe2dc230dddb8a84b9f125bbd6bf8801,
         type: 3}
       propertyPath: m_Name

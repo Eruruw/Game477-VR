@@ -9,7 +9,8 @@ public class CloneSocketObject : MonoBehaviour
 {
     public GameObject clonePrefab;
     public int numObjs = 0;
-    private XRGrabInteractable grab;
+    private Collider col;
+    private Rigidbody rb;
     private GameObject gameObjectClone;
     private bool capped;
 
@@ -18,7 +19,8 @@ public class CloneSocketObject : MonoBehaviour
         if (numObjs == 3 && capped)
         {
             capped = false;
-            grab.enabled = true;
+            col.enabled = true;
+            rb.isKinematic = false;
         }
     }
 
@@ -38,8 +40,10 @@ public class CloneSocketObject : MonoBehaviour
             GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
             GameObject item = socket.transform.gameObject;
             item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
-            grab = gameObjectClone.GetComponent<XRGrabInteractable>();
-            grab.enabled = false;
+            col = gameObjectClone.GetComponent<Collider>();
+            rb = gameObjectClone.GetComponent<Rigidbody>();
+            rb.isKinematic = true;
+            col.enabled = false;
             capped = true;
             numObjs++;
         }
