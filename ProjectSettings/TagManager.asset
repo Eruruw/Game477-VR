@@ -37,6 +37,7 @@ TagManager:
   - tray
   - orderBag
   - orderCon
+  - burger
   layers:
   - Default
   - TransparentFX

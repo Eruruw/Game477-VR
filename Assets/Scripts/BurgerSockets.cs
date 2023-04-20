@@ -23,6 +23,7 @@ public class BurgerSockets : MonoBehaviour
 
     public void SocketCheck()
     {
+        print("interact with burger socket");
         IXRSelectInteractable selItem = socket.GetOldestInteractableSelected();
         item = selItem.transform.gameObject;
         XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();

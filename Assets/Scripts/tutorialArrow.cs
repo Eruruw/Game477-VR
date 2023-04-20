@@ -156,9 +156,9 @@ public class tutorialArrow : MonoBehaviour
     {
         if (args.interactorObject.transform.CompareTag("Player"))
         {
-            if (currentStep == 18)
+            if (currentStep == 19)
             {
-                incrementStep(18);
+                incrementStep(19);
             }
         }
     }
@@ -203,6 +203,17 @@ public class tutorialArrow : MonoBehaviour
             if (currentStep == 12)
             {
                 incrementStep(12);
+            }
+        }
+    }
+
+    public void incrementIfBurger(SelectEnterEventArgs args)
+    {
+        if (args.interactableObject.transform.CompareTag("bottomBun") || args.interactableObject.transform.CompareTag("cookedPatty") || args.interactableObject.transform.CompareTag("cheese") || args.interactableObject.transform.CompareTag("topBun"))
+        {
+            if (currentStep == 9 || currentStep == 11 || currentStep == 13 || currentStep == 15)
+            {
+                incrementStep(currentStep);
             }
         }
     }

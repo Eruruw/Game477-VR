@@ -7,6 +7,7 @@ public class OrderBehavior : MonoBehaviour
     public OrderController orderCon;
     private Vector3 origPos;
     private Quaternion origRot;
+    public tutorialArrow tutorial;
 
     void Start()
     {
@@ -22,6 +23,22 @@ public class OrderBehavior : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             transform.rotation = origRot;
             transform.position = origPos;
+        }
+
+        if (col.gameObject.CompareTag("burger"))
+        {
+            if (tutorial.currentStep == 17)
+            {
+                tutorial.incrementStep(17);
+            }
+        }
+
+        if (col.gameObject.CompareTag("fries"))
+        {
+            if (tutorial.currentStep == 29)
+            {
+                tutorial.incrementStep(29);
+            }
         }
     }
 }

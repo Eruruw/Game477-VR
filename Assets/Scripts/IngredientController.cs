@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using SerializableCallback;
 
 public class IngredientController : MonoBehaviour
 {
@@ -47,5 +48,13 @@ public class IngredientController : MonoBehaviour
             gameObject.tag = "milkshake";
             foodVal = 1;
         }
+        //if (col.gameObject.CompareTag("bottomBun") || col.gameObject.CompareTag("cookedPatty")
+        //    || col.gameObject.CompareTag("cheese") || col.gameObject.CompareTag("topBun"))
+        //{
+        //    if (currentStep == 9 || currentStep == 11 || currentStep == 13 || currentStep == 15)
+        //    {
+        //        incrementStep(currentStep);
+        //    }
+        //}
     }
 }
