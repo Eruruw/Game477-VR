@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Tutorials.Core.Editor;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class friesContainer : MonoBehaviour
 {
     public GameObject scoopFries;
     public GameObject containerFries;
     public bool canFill;
+    public tutorialArrow tutorial;
 
 
     // Start is called before the first frame update
@@ -23,6 +26,19 @@ public class friesContainer : MonoBehaviour
             containerFries.SetActive(true);
             canFill = false;
             c.gameObject.tag = "emptyScoop";
+
+            if (tutorial.currentStep == 28)
+            {
+                tutorial.incrementStep(28);
+            }
+        }
+    }
+
+    public void incrementIfNext(SelectEnterEventArgs args)
+    {
+        if (tutorial.currentStep == 27 && args.interactorObject.transform.CompareTag("Player"))
+        {
+            tutorial.incrementStep(27);
         }
     }
 }
