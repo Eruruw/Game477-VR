@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +11,7 @@ public class CloneSocketObject : MonoBehaviour
     public int numObjs = 0;
     public XRSocketInteractor socketObj;
 
-    public void CloneInteractable(SelectExitEventArgs args)
+    public async void CloneInteractable(SelectExitEventArgs args)
     {
         if (numObjs <= 3)
         {
@@ -27,6 +29,7 @@ public class CloneSocketObject : MonoBehaviour
             while (numObjs == 4)
             {
                 grab.enabled = false;
+                await Task.Delay(100);
             }
             grab.enabled = true;
         }
