@@ -29,7 +29,7 @@ public class CloneSocketObject : MonoBehaviour
         }
     }
 
-    public  void CloneInteractable(SelectExitEventArgs args)
+    public void CloneInteractable(SelectExitEventArgs args)
     {
         if (numObjs <= 3)
         {
