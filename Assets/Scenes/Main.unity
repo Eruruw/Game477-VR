@@ -6405,6 +6405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1520455951}
+  tutorial: {fileID: 1961186738}
   timeLeft: 0
 --- !u!114 &1234227662 stripped
 MonoBehaviour:
