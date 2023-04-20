@@ -10,8 +10,26 @@ public class CloneSocketObject : MonoBehaviour
     public GameObject clonePrefab;
     public int numObjs = 0;
     public XRSocketInteractor socketObj;
+    private GameObject item;
+    private IXRSelectInteractable selItem;
+    private XRGrabInteractable grab;
 
-    public async void CloneInteractable(SelectExitEventArgs args)
+    void Start()
+    {
+        IXRSelectInteractable selItem = socketObj.GetOldestInteractableSelected();
+        GameObject item = selItem.transform.gameObject;
+        XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
+    }
+
+    void FixedUpdate()
+    {
+        if (numObjs == 3)
+        {
+            grab.enabled = true;
+        }
+    }
+
+    public  void CloneInteractable(SelectExitEventArgs args)
     {
         if (numObjs <= 3)
         {
@@ -21,17 +39,12 @@ public class CloneSocketObject : MonoBehaviour
             item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
             numObjs++;
         }
-        if(numObjs == 4)
+        if (numObjs == 4)
         {
             IXRSelectInteractable selItem = socketObj.GetOldestInteractableSelected();
             GameObject item = selItem.transform.gameObject;
             XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
-            while (numObjs == 4)
-            {
-                grab.enabled = false;
-                await Task.Delay(100);
-            }
-            grab.enabled = true;
+            grab.enabled = false;
         }
     }
 
