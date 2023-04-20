@@ -18,10 +18,10 @@ public class FriesTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fries[1].SetActive(true);
-        fries[2].SetActive(true);
-        fries[0].SetActive(true);
-        friesCount = 0;
+        fries[1].SetActive(false);
+        fries[2].SetActive(false);
+        fries[0].SetActive(false);
+        friesCount = 3;
         timer = 0;
         IC = GetComponent<IngredientController>();
     }
@@ -76,7 +76,10 @@ public class FriesTimer : MonoBehaviour
 
         if (c.CompareTag("fryBag") && gameObject.CompareTag("emptyBasket") && !cooking)
         {
-            Start();
+            fries[1].SetActive(true);
+            fries[2].SetActive(true);
+            fries[0].SetActive(true);
+            friesCount = 0;
             Destroy(c.gameObject);
             if (tutorial.currentStep == 20)
             {
