@@ -25,6 +25,10 @@ public class OrderBehavior : MonoBehaviour
             transform.position = origPos;
 
             //insert message to state that tutorial is over
+            if (tutorial.currentStep == 36)
+            {
+                tutorial.incrementStep(36);
+            }
         }
 
         if (col.gameObject.CompareTag("burger"))
@@ -44,9 +48,9 @@ public class OrderBehavior : MonoBehaviour
         }
         if (col.gameObject.CompareTag("milkshake"))
         {
-            if (tutorial.currentStep == 34)
+            if (tutorial.currentStep == 35)
             {
-                tutorial.incrementStep(34);
+                tutorial.incrementStep(35);
             }
         }
     }

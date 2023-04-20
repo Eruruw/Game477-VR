@@ -63,6 +63,8 @@ public class tutorialArrow : MonoBehaviour
             "Put the shake in the bag",
 
             "Give the bag to customer\nby putting it out the window",
+
+            "Congradulations on completing the tutorial!",
         };
         if (PlayerPrefs.HasKey("tutorial"))
         {

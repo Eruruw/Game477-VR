@@ -10474,6 +10474,7 @@ MonoBehaviour:
   - {fileID: 1625671790}
   - {fileID: 1149244336}
   - {fileID: 680507113}
+  - {fileID: 680507113}
   currentStep: 0
   arrowText: {fileID: 516025434}
 --- !u!4 &1961186739
