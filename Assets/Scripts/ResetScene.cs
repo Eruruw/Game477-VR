@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ResetScene : MonoBehaviour
 {
-    private void Reset()
+    public void Reset()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
