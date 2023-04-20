@@ -8,17 +8,27 @@ public class FuzeBehavior : MonoBehaviour
     public MachineController machineCon;
     public XRSocketInteractor socket;
     public InteractionLayerMask Layer;
+    private XRGrabInteractable grab;
 
     public void Replace()
     {
+        IXRSelectInteractable selItem = socket.GetOldestInteractableSelected();
+        GameObject item = selItem.transform.gameObject;
+        grab = item.GetComponent<XRGrabInteractable>();
         machineCon.bustFuze = false;
     }
 
     public void RemoveLayer()
     {
-        IXRSelectInteractable selItem = socket.GetOldestInteractableSelected();
-        GameObject item = selItem.transform.gameObject;
-        XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
         grab.interactionLayers = Layer;
+
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("trash"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
