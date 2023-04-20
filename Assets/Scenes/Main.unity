@@ -686,7 +686,8 @@ PrefabInstance:
       propertyPath: tutorial
       value: 
       objectReference: {fileID: 1961186738}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6301814518287743135, guid: 332dfc2f77898c3418bd7a5df42aa0ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 332dfc2f77898c3418bd7a5df42aa0ed, type: 3}
 --- !u!1001 &141937370
 PrefabInstance:
@@ -3612,11 +3613,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779925271}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 23.969206}
+  m_Center: {x: 0, y: 0, z: 11.484603}
 --- !u!23 &779925274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4008,10 +4009,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883696094}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 5.2758102}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &883696097
 MeshRenderer:
@@ -8312,7 +8313,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 51495194}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2064477449}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ed77eec58dfb1b448c623642cfeea17, type: 3}
@@ -8324,7 +8325,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 51495194}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2064477449}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd8ec883f01bc24985da47fc1cfbfb6, type: 3}
@@ -11053,6 +11054,27 @@ Transform:
   m_Father: {fileID: 1065582426}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2064477449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4455736037472686215, guid: 332dfc2f77898c3418bd7a5df42aa0ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 51495194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064477455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064477449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d72b394b3f174a439ae39db8b94b50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodVal: 0
+  trash: {fileID: 1559401324}
+  tutorial: {fileID: 1961186738}
 --- !u!1 &2078794299
 GameObject:
   m_ObjectHideFlags: 0
