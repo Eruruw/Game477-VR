@@ -616,6 +616,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7749202337946329110, guid: 340775a5c2980694cb5e4ad8b30c3d09,
+        type: 3}
+      propertyPath: cloneSocket
+      value: 
+      objectReference: {fileID: 1761342930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 340775a5c2980694cb5e4ad8b30c3d09, type: 3}
 --- !u!1 &190421103
@@ -5165,7 +5170,7 @@ PrefabInstance:
         type: 3}
       propertyPath: clonePrefab
       value: 
-      objectReference: {fileID: 1457466533948294251, guid: c3919a1cbb570f44690b3a6b07a7816d,
+      objectReference: {fileID: 4455736037472686215, guid: 332dfc2f77898c3418bd7a5df42aa0ed,
         type: 3}
     - target: {fileID: 5923898079209886806, guid: fe2dc230dddb8a84b9f125bbd6bf8801,
         type: 3}
@@ -5902,6 +5907,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1761342928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761342930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5923898079209886804, guid: fe2dc230dddb8a84b9f125bbd6bf8801,
+    type: 3}
+  m_PrefabInstance: {fileID: 1761342928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb135bbc1a5eca49ae05916455d418d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1785844613
 PrefabInstance:
   m_ObjectHideFlags: 0
