@@ -17,6 +17,7 @@ public class CloneSocketObject : MonoBehaviour
     {
         if (numObjs == 3 && capped)
         {
+            capped = false;
             grab.enabled = true;
         }
     }
@@ -26,16 +27,21 @@ public class CloneSocketObject : MonoBehaviour
         if (numObjs <= 3)
         {
             IXRInteractor socket = args.interactorObject;
-            gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
+            GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
             GameObject item = socket.transform.gameObject;
             item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
             numObjs++;
         }
         if (numObjs == 4)
         {
+            IXRInteractor socket = args.interactorObject;
+            GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
+            GameObject item = socket.transform.gameObject;
+            item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
             grab = gameObjectClone.GetComponent<XRGrabInteractable>();
             grab.enabled = false;
             capped = true;
+            numObjs++;
         }
     }
 
