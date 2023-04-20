@@ -22,16 +22,12 @@ public class MachineController : MonoBehaviour
     {
         if (broken)
         {
-            hingeSpring.targetPosition = 160;
             if (!unplugged && !bustFuze && !switched)
             {
                 broken = false;
-                foreach (var col in lid.GetComponentsInChildren<Collider>())
-                {
-                    col.enabled = true;
-                }
                 hingeSpring.targetPosition = 0;
                 hinge.spring = hingeSpring;
+                EnableCols();
             }
         }
     }
@@ -77,6 +73,15 @@ public class MachineController : MonoBehaviour
                 }
             }
             broken = true;
+        }
+    }
+
+    private async void EnableCols()
+    {
+        await Task.Delay(500);
+        foreach (var col in lid.GetComponentsInChildren<Collider>())
+        {
+            col.enabled = true;
         }
     }
 }
