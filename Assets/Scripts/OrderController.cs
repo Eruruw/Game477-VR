@@ -38,7 +38,6 @@ public class OrderController : MonoBehaviour
             orderNum += 1;
         }
         Debug.Log(orderNum.ToString());
-        gameObject.SetActive(false);
     }
 
     public async void CheckOrder()
