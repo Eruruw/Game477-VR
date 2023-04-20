@@ -10,20 +10,12 @@ public class CloneSocketObject : MonoBehaviour
     public GameObject clonePrefab;
     public int numObjs = 0;
     public XRSocketInteractor socketObj;
-    private GameObject item;
-    private IXRSelectInteractable selItem;
     private XRGrabInteractable grab;
-
-    void Start()
-    {
-        IXRSelectInteractable selItem = socketObj.GetOldestInteractableSelected();
-        GameObject item = selItem.transform.gameObject;
-        XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
-    }
+    private bool capped;
 
     void FixedUpdate()
     {
-        if (numObjs == 3)
+        if (numObjs == 3 && capped)
         {
             grab.enabled = true;
         }
@@ -42,9 +34,10 @@ public class CloneSocketObject : MonoBehaviour
         if (numObjs == 4)
         {
             IXRSelectInteractable selItem = socketObj.GetOldestInteractableSelected();
-            GameObject item = selItem.transform.gameObject;
-            XRGrabInteractable grab = item.GetComponent<XRGrabInteractable>();
+            GameObject itemObj = selItem.transform.gameObject;
+            grab = itemObj.GetComponent<XRGrabInteractable>();
             grab.enabled = false;
+            capped = true;
         }
     }
 
