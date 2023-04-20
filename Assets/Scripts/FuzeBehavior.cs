@@ -23,12 +23,4 @@ public class FuzeBehavior : MonoBehaviour
         grab.interactionLayers = Layer;
 
     }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("trash"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }
