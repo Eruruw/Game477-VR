@@ -13,6 +13,7 @@ public class FriesTimer : MonoBehaviour
     public float cookTime = 30f;
     public bool cooking;
     public tutorialArrow tutorial;
+    private IngredientController IC;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class FriesTimer : MonoBehaviour
         fries[0].SetActive(true);
         friesCount = 0;
         timer = 0;
+        IC = GetComponent<IngredientController>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class FriesTimer : MonoBehaviour
             if (timer > cookTime)
             {
                 gameObject.tag = "cookedFries";
+                IC.foodVal = 10;
 
                 if (tutorial.currentStep == 23)
                 {
@@ -43,6 +46,7 @@ public class FriesTimer : MonoBehaviour
             if (timer > 45)
             {
                 gameObject.tag = "overcookedFries";
+                IC.foodVal = 0;
                 //insert code to change fries model to overcooked here
             }
         }

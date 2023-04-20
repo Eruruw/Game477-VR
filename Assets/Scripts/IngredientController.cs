@@ -27,11 +27,11 @@ public class IngredientController : MonoBehaviour
 
     private async void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("check"))
+        if (col.gameObject.CompareTag("orderBag"))
         {
             OrderController check = col.GetComponent<OrderController>();
             check.checkOrder = check.checkOrder + foodVal;
-            await Task.Delay(100);
+            await Task.Delay(10);
             if (gameObject.CompareTag("cookedPatty") || gameObject.CompareTag("cheese") || gameObject.CompareTag("topBun"))
             {
                 FixedJoint joint = gameObject.GetComponent<FixedJoint>();
