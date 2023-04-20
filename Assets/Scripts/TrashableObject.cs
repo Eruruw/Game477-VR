@@ -11,12 +11,17 @@ public class TrashableObject : MonoBehaviour
     {
         if(col.gameObject.CompareTag("trash"))
         {
-            cloneSocket.numObjs--;
+            Decrement();
             Destroy(gameObject);
         }
         else if(col.gameObject.CompareTag("socket"))
         {
             cloneSocket = col.gameObject.GetComponent<CloneSocketObject>();
         }
+    }
+
+    public void Decrement()
+    {
+        cloneSocket.numObjs--;
     }
 }

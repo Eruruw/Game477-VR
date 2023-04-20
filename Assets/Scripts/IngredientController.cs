@@ -8,9 +8,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class IngredientController : MonoBehaviour
 {
     public int foodVal = 0;
+    [SerializeField] private TrashableObject trash;
 
     void Start()
     {
+        trash = gameObject.GetComponent<TrashableObject>();
         if (gameObject.CompareTag("bottomBun"))
         {
             foodVal = 100000;
@@ -37,6 +39,7 @@ public class IngredientController : MonoBehaviour
                 FixedJoint joint = gameObject.GetComponent<FixedJoint>();
                 Destroy(joint);
             }
+            trash.Decrement();
             Destroy(gameObject);
         }
         if(gameObject.CompareTag("milkshakeCup") && col.gameObject.CompareTag("milkTrigger"))
