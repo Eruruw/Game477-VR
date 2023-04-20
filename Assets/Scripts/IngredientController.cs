@@ -29,7 +29,7 @@ public class IngredientController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("orderBag"))
         {
-            OrderController check = col.GetComponent<OrderController>();
+            OrderController check = GameObject.FindWithTag("orderCon").GetComponent<OrderController>();
             check.checkOrder = check.checkOrder + foodVal;
             await Task.Delay(10);
             if (gameObject.CompareTag("cookedPatty") || gameObject.CompareTag("cheese") || gameObject.CompareTag("topBun"))

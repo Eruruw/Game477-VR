@@ -40,7 +40,7 @@ public class MachineController : MonoBehaviour
         if(!broken)
         {
             trigger.SetActive(true);
-            await Task.Delay(10);
+            await Task.Delay(200);
             trigger.SetActive(false);
         }
     }
@@ -82,7 +82,7 @@ public class MachineController : MonoBehaviour
 
     private async void EnableCols()
     {
-        await Task.Delay(4350);
+        await Task.Delay(4325);
         foreach (var col in lid.GetComponentsInChildren<Collider>())
         {
             col.enabled = true;
