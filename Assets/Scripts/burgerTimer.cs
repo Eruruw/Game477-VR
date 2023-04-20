@@ -58,7 +58,6 @@ public class burgerTimer : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("tray"))
         {
-            cooking = true;
             if (tutorial.currentStep == 7)
             {
                 tutorial.incrementStep(7);
