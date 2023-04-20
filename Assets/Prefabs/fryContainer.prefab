@@ -255,9 +255,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd8ec883f01bc24985da47fc1cfbfb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoopFries: {fileID: 0}
+  scoopFries: {fileID: 7044608593743461785, guid: 106a36c20742c7b45a3676c6ef4c97f4,
+    type: 3}
   containerFries: {fileID: 6301814518287743120}
   canFill: 1
+  tutorial: {fileID: 0}
 --- !u!1001 &1296369546700775480
 PrefabInstance:
   m_ObjectHideFlags: 0
