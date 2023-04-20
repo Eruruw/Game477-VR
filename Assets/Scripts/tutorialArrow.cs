@@ -65,7 +65,14 @@ public class tutorialArrow : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        currentStep = 0;
+        if (PlayerPrefs.HasKey("step"))
+        {
+            currentStep = PlayerPrefs.GetInt("step");
+        }
+        else
+        {
+            currentStep = 0;
+        }
     }
 
     // Update is called once per frame
@@ -78,6 +85,8 @@ public class tutorialArrow : MonoBehaviour
     public void incrementStep(int step)
     {
         currentStep = step + 1;
+        PlayerPrefs.SetInt("step", currentStep);
+        PlayerPrefs.Save();
     }
 
     public void incrementIfBasket(SelectEnterEventArgs args)
