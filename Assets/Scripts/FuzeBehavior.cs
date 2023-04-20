@@ -21,6 +21,5 @@ public class FuzeBehavior : MonoBehaviour
     public void RemoveLayer()
     {
         grab.interactionLayers = Layer;
-
     }
 }
