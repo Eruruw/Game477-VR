@@ -16,7 +16,7 @@ public class CloneSocketObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (numObjs == 3 && capped)
+        if (numObjs == 4 && capped)
         {
             capped = false;
             col.enabled = true;
@@ -44,8 +44,8 @@ public class CloneSocketObject : MonoBehaviour
             rb = gameObjectClone.GetComponent<Rigidbody>();
             rb.isKinematic = true;
             col.enabled = false;
-            capped = true;
             numObjs++;
+            capped = true;
         }
     }
 
