@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clonePrefab: {fileID: 0}
   numObjs: 0
+  socketObj: {fileID: 5923898079209886805}
