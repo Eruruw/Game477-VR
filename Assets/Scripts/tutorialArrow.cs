@@ -60,7 +60,10 @@ public class tutorialArrow : MonoBehaviour
         };
         if (PlayerPrefs.HasKey("tutorial"))
         {
-            gameObject.SetActive(false);
+            if(PlayerPrefs.GetString("tutorial") == "complete")
+            {
+                gameObject.SetActive(false);
+            }
         }
         currentStep = 0;
     }

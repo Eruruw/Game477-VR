@@ -41,5 +41,6 @@ public class GameTimer : MonoBehaviour
         {
             PlayerPrefs.SetFloat("bestTime", timer);
         }
+        PlayerPrefs.Save();
     }
 }
