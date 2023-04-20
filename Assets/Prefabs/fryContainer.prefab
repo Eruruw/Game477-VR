@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4455736037472686234}
   - component: {fileID: 4455736037472686233}
   - component: {fileID: 4455736037472686232}
+  - component: {fileID: 2290368185524768279}
   m_Layer: 0
   m_Name: fryContainer
   m_TagString: Untagged
@@ -260,6 +261,19 @@ MonoBehaviour:
   containerFries: {fileID: 6301814518287743120}
   canFill: 1
   tutorial: {fileID: 0}
+--- !u!114 &2290368185524768279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455736037472686215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed77eec58dfb1b448c623642cfeea17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloneSocket: {fileID: 0}
 --- !u!1001 &1296369546700775480
 PrefabInstance:
   m_ObjectHideFlags: 0
