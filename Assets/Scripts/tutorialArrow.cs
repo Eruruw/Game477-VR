@@ -173,4 +173,37 @@ public class tutorialArrow : MonoBehaviour
             }
         }
     }
+
+    public void incrementIfBotBun(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Player"))
+        {
+            if (currentStep == 8)
+            {
+                incrementStep(8);
+            }
+        }
+    }
+
+    public void incrementIfTopBun(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Player"))
+        {
+            if (currentStep == 14)
+            {
+                incrementStep(14);
+            }
+        }
+    }
+
+    public void incrementIfCheese(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Player"))
+        {
+            if (currentStep == 12)
+            {
+                incrementStep(12);
+            }
+        }
+    }
 }

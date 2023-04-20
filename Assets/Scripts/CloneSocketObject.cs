@@ -1,3 +1,4 @@
+using SerializableCallback;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,16 +13,22 @@ public class CloneSocketObject : MonoBehaviour
     {
         if (numObjs <= 3)
         {
-            IXRInteractor socket = args.interactorObject;
-            GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
-            GameObject item = socket.transform.gameObject;
-            item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
-            numObjs++;
+            WaitThenSpawn(args);
         }
     }
 
     public void CloneInteractable()
     {
         Instantiate(clonePrefab, gameObject.transform.position, gameObject.transform.rotation);
+    }
+
+    public IEnumerator WaitThenSpawn(SelectExitEventArgs args)
+    {
+        yield return new WaitForSeconds(0.5f);
+        IXRInteractor socket = args.interactorObject;
+        GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
+        GameObject item = socket.transform.gameObject;
+        item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
+        numObjs++;
     }
 }

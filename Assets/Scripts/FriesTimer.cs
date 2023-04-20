@@ -74,6 +74,10 @@ public class FriesTimer : MonoBehaviour
         {
             Start();
             Destroy(c.gameObject);
+            if (tutorial.currentStep == 20)
+            {
+                tutorial.incrementStep(20);
+            }
         }
 
         if (c.CompareTag("fryer"))

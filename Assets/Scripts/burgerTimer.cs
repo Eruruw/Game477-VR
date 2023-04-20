@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Tutorials.Core.Editor;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class burgerTimer : MonoBehaviour
 {
@@ -29,9 +30,9 @@ public class burgerTimer : MonoBehaviour
                 gameObject.tag = "cookedPatty";
                 IC.foodVal = 10000;
 
-                if (tutorial.currentStep == 4)
+                if (tutorial.currentStep == 5)
                 {
-                    tutorial.incrementStep(4);
+                    tutorial.incrementStep(5);
                 }
 
                 //insert code to change patty model to cooked here
@@ -55,6 +56,14 @@ public class burgerTimer : MonoBehaviour
                 tutorial.incrementStep(4);
             }
         }
+        if (collision.gameObject.CompareTag("tray"))
+        {
+            cooking = true;
+            if (tutorial.currentStep == 7)
+            {
+                tutorial.incrementStep(7);
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -62,6 +71,21 @@ public class burgerTimer : MonoBehaviour
         if (collision.gameObject.CompareTag("griddle"))
         {
             cooking = false;
+            if (tutorial.currentStep == 6)
+            {
+                tutorial.incrementStep(6);
+            }
+        }
+    }
+
+    public void incrementIfPatty(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Player"))
+        {
+            if (tutorial.currentStep == 10)
+            {
+                tutorial.incrementStep(10);
+            }
         }
     }
 }
