@@ -36,9 +36,12 @@ public class friesContainer : MonoBehaviour
 
     public void incrementIfNext(SelectEnterEventArgs args)
     {
-        if (tutorial.currentStep == 27 && args.interactorObject.transform.CompareTag("Player"))
+        if (args.interactorObject.transform.CompareTag("Player"))
         {
-            tutorial.incrementStep(27);
+            if (tutorial.currentStep == 27)
+            {
+                tutorial.incrementStep(27);
+            }
         }
     }
 }

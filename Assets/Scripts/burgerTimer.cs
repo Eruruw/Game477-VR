@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 
 public class burgerTimer : MonoBehaviour
@@ -8,6 +9,7 @@ public class burgerTimer : MonoBehaviour
     public float timer;
     public float cookTime = 30;
     private IngredientController IC;
+    public tutorialArrow tutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,12 @@ public class burgerTimer : MonoBehaviour
             {
                 gameObject.tag = "cookedPatty";
                 IC.foodVal = 10000;
+
+                if (tutorial.currentStep == 4)
+                {
+                    tutorial.incrementStep(4);
+                }
+
                 //insert code to change patty model to cooked here
             }
             if (timer > 45)
@@ -42,6 +50,10 @@ public class burgerTimer : MonoBehaviour
         if (collision.gameObject.CompareTag("griddle"))
         {
             cooking = true;
+            if (tutorial.currentStep == 4)
+            {
+                tutorial.incrementStep(4);
+            }
         }
     }
 

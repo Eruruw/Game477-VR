@@ -73,6 +73,7 @@ public class FriesTimer : MonoBehaviour
         if (c.CompareTag("fryBag") && gameObject.CompareTag("emptyBasket") && !cooking)
         {
             Start();
+            Destroy(c.gameObject);
         }
 
         if (c.CompareTag("fryer"))
@@ -105,18 +106,6 @@ public class FriesTimer : MonoBehaviour
             {
                 tutorial.incrementStep(24);
             }
-        }
-    }
-
-    public void incrementIfNext(SelectEnterEventArgs args)
-    {
-        if (tutorial.currentStep == 21 && args.interactorObject.transform.CompareTag("Player"))
-        {
-            tutorial.incrementStep(21);
-        }
-        else if (tutorial.currentStep == 25 && args.interactorObject.transform.CompareTag("Player"))
-        {
-            tutorial.incrementStep(25);
         }
     }
 }

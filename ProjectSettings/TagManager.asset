@@ -33,6 +33,7 @@ TagManager:
   - milkMachine
   - milkTrigger
   - socket
+  - burgerBag
   layers:
   - Default
   - TransparentFX
