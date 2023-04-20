@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameTimer : MonoBehaviour
 {
+    public GameObject menu;
     public float timeLeft;
     private float timer;
     private bool gameOver;
@@ -20,6 +21,7 @@ public class GameTimer : MonoBehaviour
         {
             gameOver = true;
             savePrefs();
+            menu.SetActive(true);
         }
         if (!gameOver)
         {
