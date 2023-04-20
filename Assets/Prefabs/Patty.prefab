@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1457466533948294243}
   - component: {fileID: 1533216665}
   - component: {fileID: 6343858594452975851}
+  - component: {fileID: -5285535845389189748}
   m_Layer: 0
   m_Name: Patty
   m_TagString: uncookedPatty
@@ -272,6 +273,19 @@ MonoBehaviour:
   cooking: 0
   timer: 0
   cookTime: 30
+--- !u!114 &-5285535845389189748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457466533948294251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed77eec58dfb1b448c623642cfeea17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloneSocket: {fileID: 0}
 --- !u!1001 &3623406723824493548
 PrefabInstance:
   m_ObjectHideFlags: 0

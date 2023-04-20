@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TrashableObject : MonoBehaviour
 {
-    public CloneSocketObject cloneSocket;
+    [SerializeField]
+    private CloneSocketObject cloneSocket;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -12,6 +13,10 @@ public class TrashableObject : MonoBehaviour
         {
             cloneSocket.numObjs--;
             Destroy(gameObject);
+        }
+        else if(col.gameObject.CompareTag("socket"))
+        {
+            cloneSocket = col.gameObject.GetComponent<CloneSocketObject>();
         }
     }
 }

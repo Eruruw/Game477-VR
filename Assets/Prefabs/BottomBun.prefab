@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 5750010435576292945}
   - component: {fileID: 5750010435576292946}
   - component: {fileID: 5750010435576292947}
+  - component: {fileID: 1273098948}
   - component: {fileID: 5750010435576292948}
   - component: {fileID: 5750010435576292949}
   - component: {fileID: 5750010435576292950}
-  - component: {fileID: 1273098948}
+  - component: {fileID: 6322962691018062164}
   m_Layer: 7
   m_Name: BottomBun
   m_TagString: bottomBun
@@ -88,6 +89,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1273098948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5750010435576297902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25205147, y: 0.050440315, z: 0.26396745}
+  m_Center: {x: 0.005154987, y: 0.010759382, z: -0.0000980217}
 --- !u!54 &5750010435576292948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -243,19 +257,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodVal: 0
---- !u!65 &1273098948
-BoxCollider:
+--- !u!114 &6322962691018062164
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5750010435576297902}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.25205147, y: 0.050440315, z: 0.26396745}
-  m_Center: {x: 0.005154987, y: 0.010759382, z: -0.0000980217}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed77eec58dfb1b448c623642cfeea17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloneSocket: {fileID: 0}
 --- !u!1001 &8932393523723468342
 PrefabInstance:
   m_ObjectHideFlags: 0

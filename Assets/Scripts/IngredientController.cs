@@ -44,9 +44,5 @@ public class IngredientController : MonoBehaviour
             gameObject.tag = "milkshake";
             foodVal = 1;
         }
-        if (col.gameObject.CompareTag("trash"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

@@ -1667,7 +1667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3814246708311970867}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.30899322, y: 0.041974425, z: -0.12676096}
+  m_LocalPosition: {x: -0.30899322, y: 0.041974425, z: -0.147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2703,7 +2703,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 2
-    damper: 2
+    damper: 3.2
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
