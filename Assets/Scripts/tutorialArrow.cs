@@ -58,7 +58,10 @@ public class tutorialArrow : MonoBehaviour
             {29, "Put the container of fries\nin the paper bag"},
             {30, "Give the bag to customer\nby putting it out the window"},
         };
-
+        if (PlayerPrefs.HasKey("tutorial"))
+        {
+            gameObject.SetActive(false);
+        }
         currentStep = 0;
     }
 

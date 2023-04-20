@@ -11,7 +11,7 @@ public class CloneSocketObject : MonoBehaviour
     private Collider col;
     private Rigidbody rb;
     private GameObject gameObjectClone;
-    private bool capped;
+    private bool capped, disable;
 
     void FixedUpdate()
     {
@@ -31,11 +31,8 @@ public class CloneSocketObject : MonoBehaviour
         }
         if (numObjs == 4)
         {
+            disable = true;
             StartCoroutine(WaitThenSpawn(args));
-            col = gameObjectClone.GetComponent<Collider>();
-            rb = gameObjectClone.GetComponent<Rigidbody>();
-            rb.isKinematic = true;
-            col.enabled = false;
             capped = true;
         }
     }
@@ -52,7 +49,14 @@ public class CloneSocketObject : MonoBehaviour
         GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
         GameObject item = socket.transform.gameObject;
         item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
-        clonePrefab = gameObjectClone;
+        if(disable)
+        {
+            disable = false;
+            col = gameObjectClone.GetComponent<Collider>();
+            rb = gameObjectClone.GetComponent<Rigidbody>();
+            rb.isKinematic = true;
+            col.enabled = false;
+        }
         numObjs++;
     }
 }

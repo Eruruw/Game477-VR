@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class OrderController : MonoBehaviour
 {
+    public GameTimer timer;
     public int orderNum;
     public int checkOrder;
     public CloneSocketObject[] objSpawns;
@@ -46,11 +47,11 @@ public class OrderController : MonoBehaviour
         Debug.Log(checkOrder.ToString());
         if(checkOrder == orderNum)
         {
-            Debug.Log("Correct");
+            timer.timeLeft += 60f;
         }
         else
         {
-            Debug.Log("Incorrect");
+            timer.timeLeft -= 15f;
         }
 
 //        DestroyObjs(ReturnLayer(GetAllObjs()));
