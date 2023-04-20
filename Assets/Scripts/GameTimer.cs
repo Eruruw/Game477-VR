@@ -5,9 +5,11 @@ using UnityEngine;
 public class GameTimer : MonoBehaviour
 {
     public GameObject menu;
+    public tutorialArrow tutorial;
     public float timeLeft;
     private float timer;
     private bool gameOver;
+    private bool start;
 
     void Start()
     {
@@ -17,13 +19,17 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
+        if(tutorial.currentStep == 37)
+        {
+            start = true;
+        }
         if (timeLeft <= 0)
         {
             gameOver = true;
             savePrefs();
             menu.SetActive(true);
         }
-        if (!gameOver)
+        if (!gameOver && start)
         {
             timer += Time.deltaTime;
             timeLeft -= Time.deltaTime;
