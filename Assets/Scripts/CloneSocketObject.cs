@@ -33,7 +33,6 @@ public class CloneSocketObject : MonoBehaviour
         {
             disable = true;
             StartCoroutine(WaitThenSpawn(args));
-            capped = true;
         }
     }
 
@@ -44,19 +43,20 @@ public class CloneSocketObject : MonoBehaviour
 
     public IEnumerator WaitThenSpawn(SelectExitEventArgs args)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         IXRInteractor socket = args.interactorObject;
         GameObject gameObjectClone = Instantiate(clonePrefab, socket.transform.position, socket.transform.rotation);
         GameObject item = socket.transform.gameObject;
         item.GetComponent<XRSocketInteractor>().StartManualInteraction(gameObjectClone.GetComponent<IXRSelectInteractable>());
-        if(disable)
+        numObjs++;
+        if (disable)
         {
             disable = false;
+            capped = true;
             col = gameObjectClone.GetComponent<Collider>();
             rb = gameObjectClone.GetComponent<Rigidbody>();
             rb.isKinematic = true;
             col.enabled = false;
         }
-        numObjs++;
     }
 }
